@@ -1,7 +1,7 @@
-# Twitter Symbols #
+# Gihyo.jp cm skip #
 
-This is Chrome Extention. Chrome Extentions. At Twitter official web site, support to insert symbols.
+This is Chrome Extention. skip cm of gihyo.jp.
 
 ## INSTALL ##
 
-by Chrome(Web Browser), open https://chrome.google.com/extensions/detail/bjbolaacbpibnnbfnebejhonbdbmpifa and click install.
+by Chrome(Web Browser), open https://chrome.google.com/extensions/detail/ and click install.

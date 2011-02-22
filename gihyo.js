@@ -10,7 +10,7 @@ if (skip) {
     var message = document.createTextNode();
     message.nodeValue = 'redirecting by chrome extensions(gihyo.jp cm skip)';
     var div = document.createElement('div');
-    div.setAttribute('style', 'width: 350px; font: 13px bold; position: absolute; background-color: #333; color: white; left: 0px; top: 0px;');
+    div.setAttribute('style', 'width: 350px; font: 13px bold; position: absolute; opacity:0.5; background-color: black; color: white; left: 0px; top: 0px;');
     div.appendChild(message);
     var body = document.getElementsByTagName('body')[0];
     body.appendChild(div);

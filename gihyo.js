@@ -7,6 +7,14 @@ if (skip) {
     evt.initEvent('click', false, true);
     skip_link.dispatchEvent(evt);
     console.log('gihyo.js: click skip link.');
+    var message = document.createTextNode();
+    message.nodeValue = 'redirecting by chrome extensions(gihyo.jp cm skip)';
+    var div = document.createElement('div');
+    div.setAttribute('style', 'width: 350px; font: 13px bold; position: absolute; background-color: #333; color: white; left: 0px; top: 0px;');
+    div.appendChild(message);
+    var body = document.getElementsByTagName('body')[0];
+    body.appendChild(div);
+    console.log('gihyo.js: message has shown.');
   }
 }
 /* vim: set ts=2 sw=2 sts=2 expandtab fenc=utf-8: */

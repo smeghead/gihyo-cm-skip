@@ -1,6 +1,6 @@
 {
   "name": "Giyo.jp CM skip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "skip cm of gihyo.jp.",
   "icons": { "48": "icon.png" },
   "content_scripts": [

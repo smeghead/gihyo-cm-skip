@@ -1,7 +1,7 @@
 {
   "name": "Giyo.jp CM skip",
   "version": "1.0.1",
-  "description": "skip cm of gihyo.jp.",
+  "description": "gihyo.jp のエントリを閲覧する前に表示される広告をスキップします。",
   "icons": { "48": "icon.png" },
   "content_scripts": [
     {

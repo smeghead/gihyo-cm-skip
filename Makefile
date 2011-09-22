@@ -5,6 +5,6 @@ default:
 
 dist:
 	rm -rf dist
-	mkdir -p dist/gihyo-cm-skip
-	cp $(FILES) dist/gihyo-cm-skip/
-	cd dist && zip -r gihyo-cm-skip.zip gihyo-cm-skip
+	mkdir -p dist/cm-skip
+	cp $(FILES) dist/cm-skip/
+	cd dist && zip -r cm-skip.zip cm-skip

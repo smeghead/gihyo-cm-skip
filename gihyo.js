@@ -1,7 +1,5 @@
 console.log('gihyo.js: initialize start.');
-var skip = document.getElementById('skip');
-if (skip) {
-  var skip_link = skip.firstChild;
+var do_skip = function(skip_link) {
   if (skip_link) {
     var evt = document.createEvent("MouseEvents");
     evt.initEvent('click', false, true);
@@ -16,5 +14,21 @@ if (skip) {
     body.appendChild(div);
     console.log('gihyo.js: message has shown.');
   }
+};
+//技評
+var skip = document.getElementById('skip');
+if (skip) {
+  do_skip(skip.firstChild);
 }
+//マイコミ
+var iframe = document.querySelector('iframe');
+if (iframe) {
+  var skip_mycom = iframe.contentWindow.document.querySelector('img[src="/images/header/btn_skip.gif"]');
+  console.log(skip_mycom.getAttribute('alt'));
+  if (skip_mycom) {
+    console.log(img.parentElement);
+    do_skip(img.parentElement);
+  }
+}
+
 /* vim: set ts=2 sw=2 sts=2 expandtab fenc=utf-8: */

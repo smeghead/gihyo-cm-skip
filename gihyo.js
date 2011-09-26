@@ -21,14 +21,35 @@ if (skip) {
   do_skip(skip.firstChild);
 }
 //マイコミ
-var iframe = document.querySelector('iframe');
-if (iframe) {
-  var skip_mycom = iframe.contentWindow.document.querySelector('img[src="/images/header/btn_skip.gif"]');
-  console.log(skip_mycom.getAttribute('alt'));
-  if (skip_mycom) {
-    console.log(img.parentElement);
-    do_skip(img.parentElement);
+var count = 1;
+var mycom_check = setInterval(function(){
+  console.log('start to search skip button.');
+  var iframes = document.querySelectorAll('iframe');
+  console.log(iframes);
+  for (var i = 0; i < iframes.length; i++) {
+    var iframe = iframes[i];
+    if (iframe) {
+      if (!iframe.contentDocument) continue;
+
+      var skip_mycom = iframe.contentDocument.querySelector('img[src="/images/header/btn_skip.gif"]');
+      if (skip_mycom) {
+        console.log(skip_mycom.getAttribute('alt'));
+        console.log(img.parentElement);
+        do_skip(img.parentElement);
+        console.log('skip execute.');
+        clearInterval(mycom_check);
+        return;
+      }
+    }
   }
-}
+  console.log('count ' + count);
+  if (count > 10) {
+    console.log('timer end.');
+    clearInterval(mycom_check);
+    return;
+  }
+  count++;
+  console.log('count ' + count);
+}, 500);
 
 /* vim: set ts=2 sw=2 sts=2 expandtab fenc=utf-8: */

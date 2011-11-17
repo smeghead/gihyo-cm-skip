@@ -34,8 +34,8 @@ var mycom_check = setInterval(function(){
       var skip_mycom = iframe.contentDocument.querySelector('img[src="/images/header/btn_skip.gif"]');
       if (skip_mycom) {
         console.log(skip_mycom.getAttribute('alt'));
-        console.log(img.parentElement);
-        do_skip(img.parentElement);
+        console.log(skip_mycom.parentElement);
+        do_skip(skip_mycom.parentElement);
         console.log('skip execute.');
         clearInterval(mycom_check);
         return;
@@ -52,4 +52,34 @@ var mycom_check = setInterval(function(){
   console.log('count ' + count);
 }, 500);
 
+//マイナビニュース
+var count_mynavi = 1;
+var mynavi_check = setInterval(function(){
+  console.log('start to search skip button.');
+  var iframes = document.querySelectorAll('iframe');
+  console.log(iframes);
+  for (var i = 0; i < iframes.length; i++) {
+    var iframe = iframes[i];
+    if (iframe) {
+      if (!iframe.contentDocument) continue;
+
+      var skip_mycom = iframe.contentDocument.querySelector('div#footer-btn-skip a');
+      if (skip_mycom) {
+        console.log(skip_mycom.innerHTML);
+        do_skip(skip_mycom);
+        console.log('skip execute.');
+        clearInterval(mynavi_check);
+        return;
+      }
+    }
+  }
+  console.log('count_mynavi ' + count_mynavi);
+  if (count_mynavi > 10) {
+    console.log('timer end.');
+    clearInterval(mynavi_check);
+    return;
+  }
+  count_mynavi++;
+  console.log('count_mynavi ' + count_mynavi);
+}, 500);
 /* vim: set ts=2 sw=2 sts=2 expandtab fenc=utf-8: */

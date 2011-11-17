@@ -1,13 +1,14 @@
 {
   "name": "CM skip",
-  "version": "1.0.5",
-  "description": "gihyo.jp とマイコミジャーナルのエントリを閲覧する前に表示される広告をスキップします。",
+  "version": "1.0.6",
+  "description": "gihyo.jp とマイナビニュースのエントリを閲覧する前に表示される広告をスキップします。",
   "icons": { "48": "icon.png" },
   "content_scripts": [
     {
       "matches": [
         "http://gihyo.jp/*",
-        "http://journal.mycom.co.jp/*"
+        "http://journal.mycom.co.jp/*",
+	"http://news.mynavi.jp/*"
       ],
       "js": ["gihyo.js"],
       "run_at": "document_end"
